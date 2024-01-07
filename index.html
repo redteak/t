@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人資訊網頁</title>
+    <style>
+        #info-container {
+            text-align: center;
+        }
+
+        #profile-pic {
+            max-width: 100%;
+            border-radius: 0%;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<div id="info-container">
+    <h1 id="student-id">91018130</h1>
+    <h1 id="name">張庭瀚</h1>
+    <img id="profile-pic" src="a.jpg" alt="大頭照">
+
+    <br><br>
+    <button onclick="adjustText()">按鈕1:調整 學號、姓名的字體和顏色</button>
+    <button onclick="adjustProfilePic()">按鈕2:調整大頭照為圓邊、紅色粗框</button>
+    <button onclick="changeProfilePic()">按鈕3換圖</button>
+</div>
+
+<script>
+    function adjustText() {
+        var SID = document.getElementById('student-id');
+        var nameElement = document.getElementById('name');
+        SID.style.fontFamily = 'Arial, sans-serif';
+        nameElement.style.fontFamily = 'Arial, sans-serif';
+        SID.style.color = 'red';
+        nameElement.style.color = 'red';
+    }
+
+function adjustProfilePic() {
+    var profilePicElement = document.getElementById('profile-pic');
+    if (profilePicElement.style.borderRadius === '50%') {
+        profilePicElement.style.borderRadius = '0%'; 
+        profilePicElement.style.border = '2px solid black';
+    } else {
+        profilePicElement.style.borderRadius = '50%'; 
+        profilePicElement.style.border = '4px solid red'; 
+    }
+}
+
+
+    function changeProfilePic() {
+        var profilePicElement = document.getElementById('profile-pic');
+        profilePicElement.src = 'b.jpg';
+    }
+</script>
+
+</body>
+</html>
